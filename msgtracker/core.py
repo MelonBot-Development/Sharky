@@ -447,7 +447,7 @@ class MsgTracker(BASECOG, ModCommands):
             return False
 
         if config_data["ignore_staff"] is True:
-            if await self.bot.is_mod_or_superior(message.author):
+            if await is_mod_or_superior(message.author):
                 return False
 
         try:
