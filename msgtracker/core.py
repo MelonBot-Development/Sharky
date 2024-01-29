@@ -446,10 +446,6 @@ class MsgTracker(BASECOG, ModCommands):
         if message.channel.id in config_data["ignored_channels"]:
             return False
 
-        if config_data["ignore_staff"] is True:
-            if await is_mod_or_superior(message.author):
-                return False
-
         try:
             self.counted_message[message.guild.id]
         except KeyError:
